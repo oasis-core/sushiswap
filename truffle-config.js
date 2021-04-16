@@ -47,6 +47,14 @@ module.exports = {
     //  port: 8545,            // Standard Ethereum port (default: none)
     //  network_id: "*",       // Any network (default: none)
     // },
+    // yhpark. 로컬 테스트넷 설정.
+    development: {
+      host: "127.0.0.1",     // Localhost (default: none)
+      port: 8545,            // Standard Ethereum port (default: none)
+      network_id: "*",       // Any network (default: none)
+      gasPrice: 0x01,  // <-- yhpark. 가스비 제한 때문에 가스비를 낮춤.
+    },
+
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -82,7 +90,9 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
+      // yhpark. sushiswap 솔리디티 컴파일 버전으로 셋팅.
       // version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.6.12",
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
       //  optimizer: {
